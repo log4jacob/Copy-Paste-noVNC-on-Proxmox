@@ -120,7 +120,7 @@ document.addEventListener("keydown", function (e) {
     pasteClipboardContent();
   }
 });
-
+```
 ---
 
 ## 📚 License
