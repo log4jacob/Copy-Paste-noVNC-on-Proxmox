@@ -4,7 +4,7 @@ A simple script that allows you to paste clipboard text from your host machine i
 
 ---
 
-## ✨ Features
+## Features
 
 - Paste **from host clipboard into VM**
 - Triggered by **middle mouse button click**
@@ -13,7 +13,7 @@ A simple script that allows you to paste clipboard text from your host machine i
 
 ---
 
-## 🔍 What Problem Does This Solve?
+## What Problem Does This Solve?
 
 Typing long commands, scripts, passwords, or config files into a VM through a slow web console is a pain. This script simulates keystrokes into the VM as if you typed them, saving time and effort.
 
@@ -21,7 +21,7 @@ This script only pastes **from host to VM**. It does not support copying from VM
 
 ---
 
-## 🔄 How It Works
+## How It Works
 
 - Waits for the noVNC `<canvas>` to load in the web GUI
 - Listens for **middle-clicks** inside the VM display
@@ -30,7 +30,7 @@ This script only pastes **from host to VM**. It does not support copying from VM
 
 ---
 
-## ⚙️ Important Caveats
+## Important Caveats
 
 This is a **client-side hack** — a clever workaround that simulates typing by injecting keypress events into the noVNC canvas. It’s not officially supported by Proxmox or noVNC.
 
@@ -43,7 +43,7 @@ This is a **client-side hack** — a clever workaround that simulates typing by 
 
 ---
 
-## 🔧 Setup Instructions
+## Setup Instructions
 
 ### Step 1: Install a Userscript Manager (Optional but Recommended)
 
@@ -75,7 +75,7 @@ You have two options:
 
 ---
 
-## 🔜 Using the Script
+## Using the Script
 
 1. Copy text to your clipboard on the host machine (e.g., a command)
 2. Go to the VM's noVNC browser tab
@@ -86,7 +86,7 @@ The text will be typed into the VM window, one character at a time.
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 - Only pastes **from host to VM**, not the other way
 - Requires browser permission to read clipboard
@@ -95,7 +95,7 @@ The text will be typed into the VM window, one character at a time.
 
 ---
 
-## 🔒 Security & Permissions
+## Security & Permissions
 
 - The script reads your clipboard **only on middle-click**
 - Nothing is sent externally
@@ -104,7 +104,7 @@ The text will be typed into the VM window, one character at a time.
 
 ---
 
-## 🚀 Advanced: Customize the Trigger
+## Advanced: Customize the Trigger
 
 Don’t like middle-click? You can modify the script to use keyboard shortcuts instead. Here’s how to change it to trigger on `Cmd + Shift + V` (on Mac) or `Ctrl + Shift + V` (on Windows/Linux):
 
@@ -123,19 +123,13 @@ document.addEventListener("keydown", function (e) {
 ```
 ---
 
-## 📚 License
-
-MIT — do what you want, just don’t paste into production by accident. 😅
-
----
-
-## ✉️ Feedback
+## Feedback
 
 Open an issue or fork the repo to improve or customize it further.
 
 ---
 
-## 🔗 Related Files
+## Related Files
 
 - [`paste-script.user.js`](./paste-script.user.js): The actual JavaScript userscript used to enable paste functionality.
 
