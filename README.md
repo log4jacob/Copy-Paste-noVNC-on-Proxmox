@@ -96,7 +96,7 @@ The text will be typed into the VM window, one character at a time.
 ## Security & Permissions
 
 - The script reads your clipboard **only on middle-click**
-- Nothing is sent externally
+- **Absolutely nothing** is sent externally
 - Runs entirely within your browser
 - Only affects Proxmox noVNC pages
 
