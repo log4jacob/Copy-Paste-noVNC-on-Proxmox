@@ -1,6 +1,6 @@
 # Copy-Paste-noVNC-on-Proxmox
 
-A simple script that allows you to paste clipboard text from your host machine into a Proxmox VM through the web-based noVNC console by middle-clicking anywhere inside the VM display window.
+Script that allows you to paste clipboard text from your host machine into a Proxmox VM through the web-based noVNC console by middle-clicking anywhere inside the VM display window.
 
 ---
 
@@ -32,14 +32,12 @@ This script only pastes **from host to VM**. It does not support copying from VM
 
 ## Important Caveats
 
-This is a **client-side hack** — a workaround that simulates typing by injecting keypress events into the noVNC canvas. It’s not officially supported by Proxmox or noVNC.
+This is a workaround that simulates typing by injecting keypress events into the noVNC canvas. It’s not officially supported by Proxmox or noVNC.
 
 - It does **not** interact with the VM's internal clipboard.
-- It simply "types" the text into the VM, one keystroke at a time — just like a human would.
+- It simply "types" the text into the VM, one keystroke at a time.
 - Use it for **quick tasks** or convenience.
   
-> But for fast-and-dirty pasting, it works great.
-
 ---
 
 ## Setup Instructions
