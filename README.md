@@ -32,13 +32,12 @@ This script only pastes **from host to VM**. It does not support copying from VM
 
 ## Important Caveats
 
-This is a **client-side hack** — a clever workaround that simulates typing by injecting keypress events into the noVNC canvas. It’s not officially supported by Proxmox or noVNC.
+This is a **client-side hack** — a workaround that simulates typing by injecting keypress events into the noVNC canvas. It’s not officially supported by Proxmox or noVNC.
 
 - It does **not** interact with the VM's internal clipboard.
 - It simply "types" the text into the VM, one keystroke at a time — just like a human would.
-- Use it for **quick tasks** or convenience — not mission-critical workflows.
-
-> If you're looking for something officially supported or bulletproof, this isn't it.  
+- Use it for **quick tasks** or convenience.
+  
 > But for fast-and-dirty pasting, it works great.
 
 ---
@@ -90,7 +89,6 @@ The text will be typed into the VM window, one character at a time.
 
 - Only pastes **from host to VM**, not the other way
 - Requires browser permission to read clipboard
-- Works best in Chrome-based browsers
 - Some special characters may not type correctly depending on keyboard layout
 
 ---
@@ -106,7 +104,7 @@ The text will be typed into the VM window, one character at a time.
 
 ## Advanced: Customize the Trigger
 
-Don’t like middle-click? You can modify the script to use keyboard shortcuts instead. Here’s how to change it to trigger on `Cmd + Shift + V` (on Mac) or `Ctrl + Shift + V` (on Windows/Linux):
+You can modify the script to use keyboard shortcuts instead. Here’s how to change it to trigger on `Cmd + Shift + V` (on Mac) or `Ctrl + Shift + V` (on Windows/Linux):
 
 1. Replace the `canvas.addEventListener("mousedown", handleMouseDown);` line with:
 
