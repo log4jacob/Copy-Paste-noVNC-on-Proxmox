@@ -1,5 +1,5 @@
 
-```javascript
+```javascript```
 // ==UserScript==
 // @name         noVNC Clipboard Paste via Middle Click
 // @namespace    https://yourdomain.dev/
