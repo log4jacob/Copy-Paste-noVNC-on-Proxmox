@@ -15,7 +15,7 @@ Script that allows you to paste clipboard text from your host machine into a Pro
 
 ## What Problem Does This Solve?
 
-Typing long commands, scripts, passwords, or config files into a VM through a slow web console is a pain. This script simulates keystrokes into the VM as if you typed them, saving time and effort.
+Typing long commands, scripts, passwords, or config files into a VM through a slow web console is a pain. This script simulates keystrokes into the VM as if you typed them.
 
 This script only pastes **from host to VM**. It does not support copying from VM to host.
 
@@ -30,19 +30,9 @@ This script only pastes **from host to VM**. It does not support copying from VM
 
 ---
 
-## Important Caveats
-
-This is a workaround that simulates typing by injecting keypress events into the noVNC canvas. It’s not officially supported by Proxmox or noVNC.
-
-- It does **not** interact with the VM's internal clipboard.
-- It simply "types" the text into the VM, one keystroke at a time.
-- Use it for **quick tasks** or convenience.
-  
----
-
 ## Setup Instructions
 
-### Step 1: Install a Userscript Manager (Optional but Recommended)
+### Step 1: Install a Userscript Manager (Optional but Recommended - skip to step 2, option A if not using a script manager)
 
 To make the script persistent:
 
@@ -65,7 +55,7 @@ You have two options:
 
 #### Option B: Install as Userscript (Persistent)
 
-1. Open Tampermonkey or other userscript manager
+1. Open Userscripts or other userscript manager
 2. Create a new script
 3. Paste in the contents of [`paste-script.user.js`](./paste-script.user.js)
 4. Save — the script will auto-run on matching noVNC pages
@@ -87,7 +77,6 @@ The text will be typed into the VM window, one character at a time.
 
 - Only pastes **from host to VM**, not the other way
 - Requires browser permission to read clipboard
-- Some special characters may not type correctly depending on keyboard layout
 
 ---
 
@@ -98,25 +87,6 @@ The text will be typed into the VM window, one character at a time.
 - Runs entirely within your browser
 - Only affects Proxmox noVNC pages
 
----
-
-## Advanced: Customize the Trigger
-
-You can modify the script to use keyboard shortcuts instead. Here’s how to change it to trigger on `Cmd + Shift + V` (on Mac) or `Ctrl + Shift + V` (on Windows/Linux):
-
-1. Replace the `canvas.addEventListener("mousedown", handleMouseDown);` line with:
-
-```js
-document.addEventListener("keydown", function (e) {
-  const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
-  const cmdOrCtrl = isMac ? e.metaKey : e.ctrlKey;
-
-  if (cmdOrCtrl && e.shiftKey && e.key === "v") {
-    e.preventDefault();
-    pasteClipboardContent();
-  }
-});
-```
 ---
 
 ## Feedback
