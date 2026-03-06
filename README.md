@@ -70,6 +70,3 @@ The text will be typed into the VM window.
 ## Feedback
 
 Open an issue or fork the repo to improve or customize it further.
-
----
-
