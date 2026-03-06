@@ -9,7 +9,6 @@ Script that allows you to paste clipboard text from your host machine into a Pro
 - Paste **from host clipboard into VM**
 - Triggered by **middle mouse button click**
 - Works in Proxmox's built-in **noVNC web console**
-- Can be used **manually** or installed as a **persistent userscript**
 
 ---
 
@@ -32,19 +31,7 @@ This script only pastes **from host to VM**. It does not support copying from VM
 
 ## Setup Instructions
 
-### Step 1: Install a Userscript Manager (Optional but Recommended - skip to step 2, option A if not using a script manager)
-
-To make the script persistent:
-
-| Browser      | Extension                                                                 |
-| ------------ | ------------------------------------------------------------------------- |
-| Chrome/Brave | [Tampermonkey](https://tampermonkey.net)                                  |
-| Firefox      | [Violentmonkey](https://violentmonkey.github.io)                          |
-| Safari (Mac) | [Userscripts App](https://apps.apple.com/us/app/userscripts/id1463298887) |
-
-### Step 2: Add the Script
-
-You have two options:
+### Step 1: Add the Script
 
 #### Option A: Run Manually (Temporary)
 
@@ -52,13 +39,6 @@ You have two options:
 2. Open DevTools Console (`F12` or `Cmd+Opt+I`)
 3. Paste the contents of [`paste-script.user.js`](./paste-script.user.js) into the console
 4. Hit Enter — it will wait for middle-click
-
-#### Option B: Install as Userscript (Persistent)
-
-1. Open Userscripts or other userscript manager
-2. Create a new script
-3. Paste in the contents of [`paste-script.user.js`](./paste-script.user.js)
-4. Save — the script will auto-run on matching noVNC pages
 
 ---
 
@@ -69,15 +49,13 @@ You have two options:
 3. Click inside the VM to focus it
 4. **Middle-click** (scroll wheel click) to paste
 
-The text will be typed into the VM window, one character at a time.
+The text will be typed into the VM window.
 
 ---
 
 ## Limitations
 
 - Only pastes **from host to VM**, not the other way
-- Requires browser permission to read clipboard
-
 ---
 
 ## Security & Permissions
@@ -94,8 +72,4 @@ The text will be typed into the VM window, one character at a time.
 Open an issue or fork the repo to improve or customize it further.
 
 ---
-
-## Related Files
-
-- [`paste-script.user.js`](./paste-script.user.js): The actual JavaScript userscript used to enable paste functionality.
 
