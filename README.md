@@ -12,14 +12,6 @@ Script that allows you to paste clipboard text from your host machine into a Pro
 
 ---
 
-## What Problem Does This Solve?
-
-Typing long commands, scripts, passwords, or config files into a VM through a slow web console is a pain. This script simulates keystrokes into the VM as if you typed them.
-
-This script only pastes **from host to VM**. It does not support copying from VM to host.
-
----
-
 ## How It Works
 
 - Waits for the noVNC `<canvas>` to load in the web GUI
